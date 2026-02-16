@@ -21,7 +21,7 @@
 6. ARGUMENT III: Systematic Denial of FDA-Approved Treatments Violates Due Process
    - A. The Right to Necessary Medical Care
    - B. Arbitrary and Capricious State Action
-7. ARGUMENT IV: The Discriminatory Impact Is Intentional and Systematic
+7. ARGUMENT IV: The Discriminatory Impact Is Systematic and Predictable
    - A. The Pattern Across Four Body Regions
    - B. The Harm to Vulnerable Workers
 8. Prayer for Relief
@@ -289,7 +289,7 @@ While the Supreme Court has not explicitly declared medical care a "fundamental 
 **Youngberg v. Romeo, 457 U.S. 307 (1982):**
 > "[P]ersons who have been involuntarily committed are entitled to more considerate treatment and conditions of confinement than criminals whose conditions of confinement are designed to punish."
 
-**Application to MTUS:** Injured workers, while not prisoners, are dependent on the state for medical care. The state has assumed a duty to provide care through the workers' compensation system. Deliberate denial of FDA-approved treatments constitutes deliberate indifference to serious medical needs.
+**Application to MTUS:** Injured workers, while not prisoners, are dependent on the state for medical care. The state has assumed a duty to provide care through the workers' compensation system. Systematic withholding of FDA-approved treatments through structural barriers constitutes deliberate indifference to serious medical needs.
 
 ### B. Arbitrary and Capricious State Action
 
@@ -308,7 +308,7 @@ Even apart from constitutional violations, MTUS constitutes arbitrary and capric
 
 ### A. The Pattern Across Four Body Regions
 
-The evidence demonstrates a systematic, intentional pattern—not isolated incidents:
+The evidence demonstrates a systematic, predictable pattern—not isolated incidents:
 
 | Metric | Finding |
 |--------|---------|
@@ -322,7 +322,7 @@ The evidence demonstrates a systematic, intentional pattern—not isolated incid
 
 ### B. Discriminatory Intent
 
-The systematic nature of the discrimination suggests intentional design:
+The systematic nature of the discrimination results from structural design choices:
 
 1. **Consistency:** All four guidelines use the same "insufficient evidence" standard to deny care
 2. **Scope:** The denials cover all categories—diagnostic, therapeutic, pharmacological, surgical
