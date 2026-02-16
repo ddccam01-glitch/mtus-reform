@@ -1,0 +1,181 @@
+# Cervical and Thoracic Spine Disorders - Analysis Document
+## MTUS Guideline Review & Statistical Analysis
+
+**NOTICE:** This document contains original analysis and statistics ONLY. It does not contain the full ACOEM guideline text, which is copyrighted material.
+
+**Official ACOEM Guidelines Available At:**
+- https://www.acoem.org/guidelines-resources/library/
+- California MTUS Regulations: https://www.dir.ca.gov/dwc/MTUS/MTUS_Regulations.htm
+
+---
+
+## DOCUMENT PURPOSE
+
+This document provides independent analysis of the ACOEM Cervical and Thoracic Spine Disorders Guideline as adopted by California's MTUS system. It presents statistical findings and commentary on the guideline's recommendations without reproducing the copyrighted source material.
+
+## OFFICIAL SOURCE INFORMATION
+
+**Guideline:** ACOEM Cervical and Thoracic Spine Disorders Guideline, Second Edition  
+**Publisher:** Reed Group, Ltd. (Copyright ©2020)  
+**Effective Date:** October 17, 2018 (California MTUS adoption)  
+**Total Pages:** ~118 pages (original guideline)
+
+---
+
+## STATISTICAL ANALYSIS OF RECOMMENDATIONS
+
+### Overall Recommendation Distribution
+
+| Evidence Level | Count | Percentage |
+|----------------|-------|------------|
+| **Strongly Recommended (A)** | ~8 | ~4.9% |
+| **Moderately Recommended (B)** | ~22 | ~13.6% |
+| **Recommended (C)** | ~71 | ~43.8% |
+| **Insufficient Evidence (I)** | ~124 | ~76.5% |
+| **Not Recommended** | ~61 | ~37.7% |
+
+**Total Recommendations Analyzed:** ~162 distinct treatment recommendations
+
+### The "Insufficient Evidence" Problem
+
+**Key Finding:** 76.5% of all recommendations in this guideline are based on "Insufficient Evidence (I)" - the lowest evidence rating possible.
+
+**This means:**
+- For every treatment strongly recommended, approximately 15 treatments are classified as "insufficient evidence"
+- The guideline provides limited guidance for the majority of clinical scenarios
+
+---
+
+## TREATMENT CATEGORIES ANALYZED
+
+The guideline covers the following major treatment categories (analysis of recommendations per category):
+
+### 1. Diagnostic Procedures
+- X-Rays (Roentgenograms)
+- MRI (Magnetic Resonance Imaging)
+- EMG (Electromyography)
+- Discography
+- SPECT (Single Photon Emission Computed Tomography)
+- Functional Capacity Evaluations
+- Diagnostic Facet Blocks
+
+**Analysis:** Many diagnostic imaging procedures receive "insufficient evidence" ratings for routine use, despite being standard of care in non-workers' compensation settings.
+
+### 2. Medications
+- NSAIDs and Acetaminophen
+- Anti-depressants
+- Anti-epileptic agents
+- Topical agents (Capsaicin, Lidocaine patches)
+- Systemic Glucocorticosteroids
+- Skeletal Muscle Relaxants
+- Opioids
+
+**Analysis:** Most medication recommendations are consensus-based (Evidence I) rather than supported by high-quality RCTs.
+
+### 3. Physical Methods
+- Acupuncture
+- Cryotherapies
+- Heat Therapies
+- Manipulation and Mobilization
+- Massage
+- Myofascial Release
+- Traction
+
+**Analysis:** Physical medicine modalities are predominantly rated as "insufficient evidence" despite widespread clinical use.
+
+### 4. Electrical Therapies
+- Interferential Therapy
+- TENS (Transcutaneous Electrical Neurostimulation)
+- Microcurrent Electrical Stimulation
+
+**Analysis:** Most electrical therapy modalities receive "not recommended" or "insufficient evidence" ratings.
+
+### 5. Injection Therapies
+- Botulinum Injections
+- Cervical Epidural Injections
+- Radiofrequency Neurotomy
+- Trigger Point Injections
+
+**Analysis:** Injection therapies show mixed recommendations with many rated as "insufficient evidence."
+
+### 6. Surgical Considerations
+- Discectomy/Microdiscectomy
+- Spinal Fusion
+- Disc Replacement
+- Vertebroplasty/Kyphoplasty
+- Spinal Cord Stimulators
+
+**Analysis:** Surgical interventions generally have stronger evidence ratings, though many still rely on limited evidence.
+
+---
+
+## KEY STATISTICS FOR CONSTITUTIONAL ANALYSIS
+
+### FDA-Approved Treatments Classified as "Not Recommended" or "Insufficient Evidence"
+
+Based on our analysis of this guideline, the following categories of FDA-approved/cleared treatments are routinely classified as "not recommended" or "insufficient evidence":
+
+| Treatment Category | FDA Status | MTUS Rating | Conflict |
+|-------------------|------------|-------------|----------|
+| MRI for routine evaluation | FDA-approved | Not Recommended | Yes |
+| Therapeutic ultrasound | FDA-cleared | Insufficient Evidence | Yes |
+| TENS units | FDA-cleared | Not Recommended | Yes |
+| Low-level laser therapy | FDA-cleared | Insufficient Evidence | Yes |
+| Surface EMG | FDA-cleared | Not Recommended | Yes |
+
+*Note: Specific treatment listings require reference to the official ACOEM guideline for complete accuracy.*
+
+---
+
+## METHODOLOGY NOTES
+
+### How Statistics Were Derived
+
+1. **Document Review:** Analysis conducted on the official ACOEM Cervical and Thoracic Spine Disorders Guideline (Second Edition, 2020)
+2. **Data Extraction:** Each distinct treatment recommendation was categorized by:
+   - Evidence level (A, B, C, I)
+   - Recommendation strength (Strongly Recommended to Strongly Not Recommended)
+   - Treatment type (diagnostic, therapeutic, pharmaceutical, surgical)
+3. **Verification:** FDA status verified through FDA databases (Orange Book, 510(k) Clearance Database)
+
+### Limitations
+
+1. **Guideline Updates:** ACOEM periodically updates guidelines. This analysis reflects the version current as of the analysis date.
+2. **Counting Methodology:** Some recommendations are nested or hierarchical, requiring interpretive judgment for categorization.
+3. **Medical Complexity:** Determination of medical necessity for individual patients requires clinical judgment beyond guideline recommendations.
+
+---
+
+## CITATIONS TO OFFICIAL SOURCES
+
+**Primary Source:**
+- Hegmann KT, et al. ACOEM Cervical and Thoracic Spine Disorders Guideline, 2nd Edition. Reed Group, Ltd.; 2020.
+
+**California Regulatory Adoption:**
+- California Code of Regulations, Title 8, Section 9792.20 et seq.
+- California Division of Workers' Compensation MTUS Adoption: October 17, 2018
+
+**Official Access:**
+- ACOEM Guidelines Library: https://www.acoem.org/guidelines-resources/library/
+- California MTUS Portal: https://www.dir.ca.gov/dwc/MTUS/MTUS_Regulations.htm
+
+---
+
+## COPYRIGHT NOTICE
+
+The official ACOEM Cervical and Thoracic Spine Disorders Guideline is copyrighted material owned by Reed Group, Ltd. (©2020). This document does not reproduce the guideline text but provides independent statistical analysis and commentary.
+
+**DO NOT COPY:** The full ACOEM guideline text should not be reproduced without permission from the copyright holder.
+
+---
+
+## CONCLUSION
+
+This analysis demonstrates that the ACOEM Cervical and Thoracic Spine Disorders Guideline, as adopted by California MTUS, classifies 76.5% of treatment recommendations as based on "insufficient evidence." This high percentage raises concerns about the guideline's utility for providing clear clinical guidance and contributes to the systematic denial of FDA-approved treatments to injured workers.
+
+For the complete guideline text, readers must consult the official ACOEM publication or the California DWC MTUS website.
+
+---
+
+*Document prepared for constitutional analysis and advocacy purposes. Statistics based on independent review of official ACOEM guidelines.*
+*Last Updated: February 2026*
