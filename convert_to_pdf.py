@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
 Convert MTUS text files to professionally formatted PDFs
+Fixed version with proper text wrapping
 """
 
 import os
@@ -10,96 +11,69 @@ from pathlib import Path
 
 from fpdf import FPDF
 
-# Page width in mm for Letter size
-PAGE_WIDTH = 215.9  # 8.5 inches
-PAGE_HEIGHT = 279.4  # 11 inches
-MARGIN = 20
-CONTENT_WIDTH = PAGE_WIDTH - (2 * MARGIN)
-
 
 class MTUSPDF(FPDF):
     def __init__(self):
         super().__init__(unit='mm', format='Letter')
-        self.set_auto_page_break(auto=True, margin=20)
+        self.set_auto_page_break(auto=True, margin=15)
+        self.set_margins(20, 20, 20)  # left, top, right
+        self.content_width = self.w - self.l_margin - self.r_margin
         
     def header(self):
         if self.page_no() > 1:
-            self.set_font('helvetica', 'I', 9)
+            self.set_y(12)
+            self.set_font('helvetica', 'I', 8)
             self.set_text_color(100, 100, 100)
-            self.cell(CONTENT_WIDTH, 8, 'MTUS Constitutional Analysis Project', align='C')
-            self.ln(4)
+            self.cell(0, 6, 'MTUS Constitutional Analysis Project', align='C')
+            self.ln(3)
             self.set_draw_color(180, 180, 180)
-            self.line(MARGIN, self.get_y(), PAGE_WIDTH - MARGIN, self.get_y())
-            self.ln(6)
+            self.line(self.l_margin, self.get_y(), self.w - self.r_margin, self.get_y())
         
     def footer(self):
-        self.set_y(-15)
-        self.set_font('helvetica', 'I', 9)
+        self.set_y(-12)
+        self.set_font('helvetica', 'I', 8)
         self.set_text_color(100, 100, 100)
-        self.cell(CONTENT_WIDTH, 10, f'Page {self.page_no()}', align='C')
+        self.cell(0, 6, f'Page {self.page_no()}', align='C')
         
     def add_title_page(self, title, subtitle=None):
         self.add_page()
-        self.set_y(70)
+        self.set_y(60)
         
         # Main title
-        self.set_font('helvetica', 'B', 18)
+        self.set_font('helvetica', 'B', 20)
         self.set_text_color(0, 51, 102)
         
-        # Wrap title
-        words = title.split()
-        lines = []
-        current_line = []
-        for word in words:
-            current_line.append(word)
-            test_line = ' '.join(current_line)
-            if self.get_string_width(test_line) > CONTENT_WIDTH - 10:
-                current_line.pop()
-                lines.append(' '.join(current_line))
-                current_line = [word]
-        if current_line:
-            lines.append(' '.join(current_line))
-            
-        for line in lines:
-            self.cell(CONTENT_WIDTH, 10, line, align='C')
-            self.ln(10)
+        # Center text wrapping for title
+        self.set_x(self.l_margin)
+        self.multi_cell(0, 10, title, align='C')
             
         if subtitle:
-            self.ln(5)
-            self.set_font('helvetica', 'I', 11)
+            self.ln(8)
+            self.set_font('helvetica', 'I', 12)
             self.set_text_color(80, 80, 80)
-            sub_lines = []
-            sub_words = subtitle.split()
-            current_line = []
-            for word in sub_words:
-                current_line.append(word)
-                test_line = ' '.join(current_line)
-                if self.get_string_width(test_line) > CONTENT_WIDTH - 10:
-                    current_line.pop()
-                    sub_lines.append(' '.join(current_line))
-                    current_line = [word]
-            if current_line:
-                sub_lines.append(' '.join(current_line))
-            for line in sub_lines:
-                self.cell(CONTENT_WIDTH, 6, line, align='C')
-                self.ln(6)
+            self.set_x(self.l_margin)
+            self.multi_cell(0, 7, subtitle, align='C')
                 
-        self.ln(25)
+        self.ln(30)
         
         # Decorative line
         self.set_draw_color(0, 51, 102)
         self.set_line_width(0.5)
         line_y = self.get_y()
-        self.line(60, line_y, PAGE_WIDTH - 60, line_y)
+        center_x = self.w / 2
+        self.line(center_x - 40, line_y, center_x + 40, line_y)
         
-        self.ln(20)
+        self.ln(25)
         self.set_font('helvetica', '', 10)
         self.set_text_color(100, 100, 100)
-        self.cell(CONTENT_WIDTH, 8, 'MTUS Constitutional Analysis Project', align='C')
+        self.set_x(self.l_margin)
+        self.cell(0, 8, 'MTUS Constitutional Analysis Project', align='C')
         self.ln(6)
-        self.cell(CONTENT_WIDTH, 8, 'Personal Research Initiative', align='C')
+        self.set_x(self.l_margin)
+        self.cell(0, 8, 'Personal Research Initiative', align='C')
         self.ln(6)
-        self.cell(CONTENT_WIDTH, 8, 'February 2026', align='C')
+        self.set_x(self.l_margin)
+        self.cell(0, 8, 'February 2026', align='C')
 
 
 def clean_markdown(text):
@@ -121,7 +95,7 @@ def convert_txt_to_pdf(input_file, output_file):
     
     # Read content
     content = input_file.read_text(encoding='utf-8', errors='ignore')
-    # Remove problematic Unicode characters
+    # Remove problematic Unicode characters but keep basic ASCII
     content = content.encode('ascii', 'ignore').decode('ascii')
     lines = content.split('\n')
     
@@ -162,22 +136,23 @@ def convert_txt_to_pdf(input_file, output_file):
                 in_bullet_list = False
             pdf.ln(4)
             pdf.set_draw_color(150, 150, 150)
-            pdf.line(MARGIN, pdf.get_y(), PAGE_WIDTH - MARGIN, pdf.get_y())
+            pdf.line(pdf.l_margin, pdf.get_y(), pdf.w - pdf.r_margin, pdf.get_y())
             pdf.ln(4)
             i += 1
             continue
             
-        # Headers
+        # Headers - use multi_cell with width=0 for full width
         if line.startswith('# '):
             if in_bullet_list:
                 render_bullet_list(pdf, bullet_items)
                 bullet_items = []
                 in_bullet_list = False
-            pdf.set_font('helvetica', 'B', 14)
+            pdf.set_font('helvetica', 'B', 16)
             pdf.set_text_color(0, 51, 102)
             pdf.ln(6)
-            pdf.multi_cell(CONTENT_WIDTH, 7, clean_markdown(line[2:].strip()))
-            pdf.ln(3)
+            pdf.set_x(pdf.l_margin)
+            pdf.multi_cell(0, 8, clean_markdown(line[2:].strip()))
+            pdf.ln(2)
             i += 1
             continue
             
@@ -186,10 +161,11 @@ def convert_txt_to_pdf(input_file, output_file):
                 render_bullet_list(pdf, bullet_items)
                 bullet_items = []
                 in_bullet_list = False
-            pdf.set_font('helvetica', 'B', 12)
+            pdf.set_font('helvetica', 'B', 13)
             pdf.set_text_color(0, 0, 0)
             pdf.ln(5)
-            pdf.multi_cell(CONTENT_WIDTH, 6, clean_markdown(line[3:].strip()))
+            pdf.set_x(pdf.l_margin)
+            pdf.multi_cell(0, 7, clean_markdown(line[3:].strip()))
             pdf.ln(2)
             i += 1
             continue
@@ -199,10 +175,11 @@ def convert_txt_to_pdf(input_file, output_file):
                 render_bullet_list(pdf, bullet_items)
                 bullet_items = []
                 in_bullet_list = False
-            pdf.set_font('helvetica', 'B', 10)
+            pdf.set_font('helvetica', 'B', 11)
             pdf.set_text_color(40, 40, 40)
             pdf.ln(4)
-            pdf.multi_cell(CONTENT_WIDTH, 5, clean_markdown(line[4:].strip()))
+            pdf.set_x(pdf.l_margin)
+            pdf.multi_cell(0, 6, clean_markdown(line[4:].strip()))
             pdf.ln(2)
             i += 1
             continue
@@ -215,7 +192,8 @@ def convert_txt_to_pdf(input_file, output_file):
             pdf.set_font('helvetica', 'B', 10)
             pdf.set_text_color(60, 60, 60)
             pdf.ln(3)
-            pdf.multi_cell(CONTENT_WIDTH, 5, clean_markdown(line[5:].strip()))
+            pdf.set_x(pdf.l_margin)
+            pdf.multi_cell(0, 5, clean_markdown(line[5:].strip()))
             pdf.ln(1)
             i += 1
             continue
@@ -254,7 +232,7 @@ def convert_txt_to_pdf(input_file, output_file):
             i += 1
             continue
             
-        # Handle table rows - skip for now, render as text
+        # Handle table rows
         if stripped.startswith('|'):
             if in_bullet_list:
                 render_bullet_list(pdf, bullet_items)
@@ -265,7 +243,8 @@ def convert_txt_to_pdf(input_file, output_file):
                 pdf.set_font('helvetica', '', 9)
                 pdf.set_text_color(0, 0, 0)
                 table_text = '  |  '.join(clean_markdown(c) for c in cells if c)
-                pdf.multi_cell(CONTENT_WIDTH, 5, table_text)
+                pdf.set_x(pdf.l_margin)
+                pdf.multi_cell(0, 5, table_text)
             i += 1
             continue
             
@@ -280,7 +259,8 @@ def convert_txt_to_pdf(input_file, output_file):
         
         cleaned = clean_markdown(line)
         if cleaned.strip():
-            pdf.multi_cell(CONTENT_WIDTH, 5, cleaned)
+            pdf.set_x(pdf.l_margin)
+            pdf.multi_cell(0, 5, cleaned)
             
         i += 1
         
@@ -292,11 +272,13 @@ def convert_txt_to_pdf(input_file, output_file):
     pdf.add_page()
     pdf.set_font('helvetica', 'B', 14)
     pdf.set_text_color(180, 0, 0)
-    pdf.cell(CONTENT_WIDTH, 10, 'LEGAL DISCLAIMER', align='C')
-    pdf.ln(10)
+    pdf.set_x(pdf.l_margin)
+    pdf.cell(0, 10, 'LEGAL DISCLAIMER', align='C')
+    pdf.ln(12)
     
     pdf.set_font('helvetica', '', 9)
     pdf.set_text_color(0, 0, 0)
+    pdf.set_x(pdf.l_margin)
     disclaimer = """This document contains personal opinions, analysis, and commentary only. Nothing herein constitutes legal advice, factual allegations, or definitive claims about any person, organization, or government entity.
 
 The content is for informational and educational purposes only. Consult a qualified attorney for legal advice specific to your situation.
@@ -309,7 +291,7 @@ This document is protected under the First Amendment and California Code of Civi
 
 Copyright 2026 MTUS Constitutional Analysis Project. Personal Research Initiative."""
     
-    pdf.multi_cell(CONTENT_WIDTH, 5, disclaimer)
+    pdf.multi_cell(0, 5, disclaimer)
     
     # Save PDF
     pdf.output(str(output_file))
@@ -324,13 +306,11 @@ def render_bullet_list(pdf, items):
     
     for item in items:
         cleaned = clean_markdown(item)
-        # Indent for bullet
-        pdf.set_x(MARGIN + 5)
-        bullet_width = pdf.get_string_width('- ')
-        pdf.cell(bullet_width, 5, '- ', new_x="RIGHT")
-        # Content width minus indent and bullet
-        content_w = CONTENT_WIDTH - 10 - bullet_width
-        pdf.multi_cell(content_w, 5, cleaned)
+        # Draw bullet
+        pdf.set_x(pdf.l_margin + 5)
+        pdf.cell(4, 5, '-', new_x="RIGHT")
+        # Content with wrap - use 0 width for auto to right margin
+        pdf.multi_cell(0, 5, cleaned)
         pdf.ln(1)
 
 
@@ -363,6 +343,8 @@ def main():
                     success_count += 1
             except Exception as e:
                 print(f"  Error converting {filename}: {e}")
+                import traceback
+                traceback.print_exc()
         else:
             print(f"  Not found: {filename}")
             
