@@ -118,6 +118,36 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .doc-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .download-btn {
+            background: #0066cc;
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+        
+        .download-btn:hover {
+            background: #0052a3;
+        }
+        
+        .download-btn.txt {
+            background: #6c757d;
+        }
+        
+        .download-btn.txt:hover {
+            background: #5a6268;
         }
         
         .document-list li:hover {
@@ -134,18 +164,7 @@
             color: #666;
         }
         
-        .download-btn {
-            background: #0066cc;
-            color: white;
-            padding: 8px 15px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 0.9em;
-        }
-        
-        .download-btn:hover {
-            background: #0052a3;
-        }
+        /* Button styles moved to document-list li section */
         
         .contact-section {
             background: #e9ecef;
@@ -203,8 +222,14 @@
                 align-items: flex-start;
             }
             
-            .download-btn {
+            .doc-buttons {
                 margin-top: 10px;
+                width: 100%;
+            }
+            
+            .download-btn {
+                flex: 1;
+                text-align: center;
             }
         }
     </style>
@@ -303,77 +328,120 @@
                     <div class="doc-title">Executive Summary: 14th Amendment Analysis</div>
                     <div class="doc-meta">Overview of constitutional arguments • 15 pages</div>
                 </div>
-                <a href="./docs/MTUS_EXECUTIVE_SUMMARY_14th_Amendment_Constitutional_Violation.pdf" class="download-btn" download>Download PDF</a>
+                <div class="doc-buttons">
+                    <a href="./docs/MTUS_EXECUTIVE_SUMMARY_14th_Amendment_Constitutional_Violation.pdf" class="download-btn" download>📄 PDF</a>
+                    <a href="./docs/MTUS_EXECUTIVE_SUMMARY_14th_Amendment_Constitutional_Violation.txt" class="download-btn txt" download>📝 TXT</a>
+                </div>
             </li>
             <li>
                 <div>
                     <div class="doc-title">Master Constitutional Violation Report</div>
                     <div class="doc-meta">Comprehensive legal analysis • 200+ pages</div>
                 </div>
-                <a href="./docs/MTUS_CONSTITUTIONAL_VIOLATION_MASTER_REPORT.txt" class="download-btn" download>Download TXT</a>
+                <div class="doc-buttons">
+                    <a href="./docs/MTUS_CONSTITUTIONAL_VIOLATION_MASTER_REPORT.pdf" class="download-btn" download>📄 PDF</a>
+                    <a href="./docs/MTUS_CONSTITUTIONAL_VIOLATION_MASTER_REPORT.txt" class="download-btn txt" download>📝 TXT</a>
+                </div>
             </li>
             <li>
                 <div>
                     <div class="doc-title">Legal Arguments: Equal Protection Challenge</div>
                     <div class="doc-meta">Detailed constitutional arguments • 45 pages</div>
                 </div>
-                <a href="./docs/MTUS_14TH_AMENDMENT_LEGAL_ARGUMENTS.txt" class="download-btn" download>Download TXT</a>
+                <div class="doc-buttons">
+                    <a href="./docs/MTUS_14TH_AMENDMENT_LEGAL_ARGUMENTS.pdf" class="download-btn" download>📄 PDF</a>
+                    <a href="./docs/MTUS_14TH_AMENDMENT_LEGAL_ARGUMENTS.txt" class="download-btn txt" download>📝 TXT</a>
+                </div>
             </li>
             <li>
                 <div>
                     <div class="doc-title">All 17 Guidelines Analysis</div>
                     <div class="doc-meta">Statistical review of MTUS guidelines • Comprehensive</div>
                 </div>
-                <a href="./docs/MTUS_MASTER_EXECUTIVE_SUMMARY_ALL_17_GUIDELINES.txt" class="download-btn" download>Download TXT</a>
+                <div class="doc-buttons">
+                    <a href="./docs/MTUS_MASTER_EXECUTIVE_SUMMARY_ALL_17_GUIDELINES.pdf" class="download-btn" download>📄 PDF</a>
+                    <a href="./docs/MTUS_MASTER_EXECUTIVE_SUMMARY_ALL_17_GUIDELINES.txt" class="download-btn txt" download>📝 TXT</a>
+                </div>
             </li>
             <li>
                 <div>
                     <div class="doc-title">Cervical/Thoracic Spine Analysis</div>
                     <div class="doc-meta">Statistical analysis only • Original commentary</div>
                 </div>
-                <a href="./docs/ACOEM-Cervical-and-Thoracic-Spine-Guideline.txt" class="download-btn" download>Download TXT</a>
+                <div class="doc-buttons">
+                    <a href="./docs/ACOEM-Cervical-and-Thoracic-Spine-Guideline.pdf" class="download-btn" download>📄 PDF</a>
+                    <a href="./docs/ACOEM-Cervical-and-Thoracic-Spine-Guideline.txt" class="download-btn txt" download>📝 TXT</a>
+                </div>
             </li>
             <li>
                 <div>
                     <div class="doc-title">Shoulder Disorders Analysis</div>
                     <div class="doc-meta">Statistical analysis only • Original commentary</div>
                 </div>
-                <a href="./docs/Shoulder-Disorders-Guideline.txt" class="download-btn" download>Download TXT</a>
+                <div class="doc-buttons">
+                    <a href="./docs/Shoulder-Disorders-Guideline.pdf" class="download-btn" download>📄 PDF</a>
+                    <a href="./docs/Shoulder-Disorders-Guideline.txt" class="download-btn txt" download>📝 TXT</a>
+                </div>
             </li>
             <li>
                 <div>
                     <div class="doc-title">Elbow Disorders Analysis</div>
                     <div class="doc-meta">Statistical analysis only • Original commentary</div>
                 </div>
-                <a href="./docs/Elbow-Disorders-Guideline.txt" class="download-btn" download>Download TXT</a>
+                <div class="doc-buttons">
+                    <a href="./docs/Elbow-Disorders-Guideline.pdf" class="download-btn" download>📄 PDF</a>
+                    <a href="./docs/Elbow-Disorders-Guideline.txt" class="download-btn txt" download>📝 TXT</a>
+                </div>
             </li>
             <li>
                 <div>
                     <div class="doc-title">Hand/Wrist/Forearm Analysis</div>
                     <div class="doc-meta">Statistical analysis only • Original commentary</div>
                 </div>
-                <a href="./docs/Hand-Wrist-Forearm-Disorders-Guideline.txt" class="download-btn" download>Download TXT</a>
+                <div class="doc-buttons">
+                    <a href="./docs/Hand-Wrist-Forearm-Disorders-Guideline.pdf" class="download-btn" download>📄 PDF</a>
+                    <a href="./docs/Hand-Wrist-Forearm-Disorders-Guideline.txt" class="download-btn txt" download>📝 TXT</a>
+                </div>
             </li>
             <li>
                 <div>
                     <div class="doc-title">Supplemental 14th Amendment Case Law Analysis</div>
                     <div class="doc-meta">Additional precedents including Romer, Olech, Youngberg • 30+ pages</div>
                 </div>
-                <a href="./docs/SUPPLEMENTAL_CASE_LAW_ANALYSIS.txt" class="download-btn" download>Download TXT</a>
+                <div class="doc-buttons">
+                    <a href="./docs/SUPPLEMENTAL_CASE_LAW_ANALYSIS.pdf" class="download-btn" download>📄 PDF</a>
+                    <a href="./docs/SUPPLEMENTAL_CASE_LAW_ANALYSIS.txt" class="download-btn txt" download>📝 TXT</a>
+                </div>
             </li>
             <li>
                 <div>
                     <div class="doc-title">Second Supplemental Case Law Analysis</div>
                     <div class="doc-meta">36 additional precedents • Reed, Cruzan, Douglas, Sniadach • 50+ pages</div>
                 </div>
-                <a href="./docs/SECOND_SUPPLEMENTAL_CASE_LAW_ANALYSIS.txt" class="download-btn" download>Download TXT</a>
+                <div class="doc-buttons">
+                    <a href="./docs/SECOND_SUPPLEMENTAL_CASE_LAW_ANALYSIS.pdf" class="download-btn" download>📄 PDF</a>
+                    <a href="./docs/SECOND_SUPPLEMENTAL_CASE_LAW_ANALYSIS.txt" class="download-btn txt" download>📝 TXT</a>
+                </div>
             </li>
             <li>
                 <div>
                     <div class="doc-title">ADA Tier 1 Case Law Analysis</div>
                     <div class="doc-meta">Americans with Disabilities Act precedents • Frazier, Doe, Bates, Munson • 80+ pages</div>
                 </div>
-                <a href="./docs/ADA_TIER1_CASE_LAW_ANALYSIS.txt" class="download-btn" download>Download TXT</a>
+                <div class="doc-buttons">
+                    <a href="./docs/ADA_TIER1_CASE_LAW_ANALYSIS.pdf" class="download-btn" download>📄 PDF</a>
+                    <a href="./docs/ADA_TIER1_CASE_LAW_ANALYSIS.txt" class="download-btn txt" download>📝 TXT</a>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <div class="doc-title">Copyright Compliance Notice</div>
+                    <div class="doc-meta">Fair use documentation and legal notices</div>
+                </div>
+                <div class="doc-buttons">
+                    <a href="./docs/COPYRIGHT_COMPLIANCE_NOTICE.pdf" class="download-btn" download>📄 PDF</a>
+                    <a href="./docs/COPYRIGHT_COMPLIANCE_NOTICE.txt" class="download-btn txt" download>📝 TXT</a>
+                </div>
             </li>
         </ul>
         
@@ -471,7 +539,7 @@
             <p><strong>MTUS Constitutional Analysis Project</strong></p>
             <p>Personal Research Initiative • AI-Assisted Analysis • Opinion and Commentary</p>
             <p style="margin-top: 10px;">
-                Last updated: February 2026 • 
+                Last updated: February 27, 2026 • 
                 <a href="https://github.com/ddccam01-glitch/mtus-reform" target="_blank">View on GitHub</a>
             </p>
             <p style="margin-top: 15px; font-size: 0.8em; color: #999;">
